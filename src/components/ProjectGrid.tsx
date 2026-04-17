@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
 import cmcAfter from "@/assets/cmc-after.jpg";
 
@@ -10,21 +11,14 @@ const projects = [
     image: cmcAfter,
     tags: ["UX Research", "UI Design", "HTML/JS"],
   },
-  {
-    title: "Playground",
-    subtitle: "Unity/C# experiments and game dev prototypes — coming soon",
-    image: "/placeholder.svg",
-    tags: ["Unity", "C#", "Game Dev"],
-  },
 ];
 
 const ProjectGrid = () => {
-  const scrollToCaseStudy = () => {
-    document.getElementById("case-study")?.scrollIntoView({ behavior: "smooth" });
-  };
+  const navigate = useNavigate();
+  const openCaseStudy = () => navigate("/case-study");
 
   return (
-    <section id="projects" className="py-24 md:py-32 bg-surface">
+    <section id="projects" className="scroll-mt-20 py-24 md:py-32 bg-surface">
       <div className="container px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +46,7 @@ const ProjectGrid = () => {
             >
               <ProjectCard
                 {...project}
-                onClick={i === 0 ? scrollToCaseStudy : undefined}
+                onClick={i === 0 ? openCaseStudy : undefined}
               />
             </motion.div>
           ))}

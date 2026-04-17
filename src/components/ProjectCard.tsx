@@ -10,12 +10,18 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ title, subtitle, metric, image, tags, onClick }: ProjectCardProps) => {
+  const isInteractive = typeof onClick === "function";
+
   return (
-    <motion.div
+    <motion.button
+      type="button"
       whileHover={{ y: -6, scale: 1.01 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="group glass-card overflow-hidden cursor-pointer"
+      className={`group glass-card overflow-hidden w-full text-left ${
+        isInteractive ? "cursor-pointer" : "cursor-default"
+      }`}
       onClick={onClick}
+      disabled={!isInteractive}
     >
       <div className="aspect-[16/10] overflow-hidden bg-surface">
         <img
@@ -41,7 +47,7 @@ const ProjectCard = ({ title, subtitle, metric, image, tags, onClick }: ProjectC
           ))}
         </div>
       </div>
-    </motion.div>
+    </motion.button>
   );
 };
 

@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "Work", href: "#projects" },
-  { label: "Case Study", href: "#case-study" },
-  { label: "About", href: "#about" },
+  { label: "Game Dev", href: "/game-dev" },
+  { label: "Art", href: "/art" },
+  { label: "About Me", href: "/about" },
 ];
 
 const Navbar = () => {
@@ -25,21 +27,31 @@ const Navbar = () => {
       }`}
     >
       <nav className="container px-6 flex items-center justify-between h-16">
-        <a href="#" className="font-display font-bold text-lg">
+        <Link to="/" className="font-display font-bold text-lg">
           Carly<span className="text-primary">.</span>
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            l.href.startsWith("#") ? (
+              <Link
+                key={l.href}
+                to={`/${l.href}`}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <Link
+                key={l.href}
+                to={l.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </Link>
+            ),
+          )}
         </div>
 
         {/* Mobile toggle */}
@@ -62,16 +74,27 @@ const Navbar = () => {
             className="md:hidden bg-background border-b border-border overflow-hidden"
           >
             <div className="container px-6 py-4 flex flex-col gap-4">
-              {links.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {l.label}
-                </a>
-              ))}
+              {links.map((l) =>
+                l.href.startsWith("#") ? (
+                  <Link
+                    key={l.href}
+                    to={`/${l.href}`}
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {l.label}
+                  </Link>
+                ) : (
+                  <Link
+                    key={l.href}
+                    to={l.href}
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {l.label}
+                  </Link>
+                ),
+              )}
             </div>
           </motion.div>
         )}
