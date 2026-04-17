@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Work", href: "#projects" },
+  { label: "Home", href: "/" },
+  { label: "Project Management", href: "/project-management" },
   { label: "Game Dev", href: "/game-dev" },
   { label: "Art", href: "/art" },
   { label: "About Me", href: "/about" },
@@ -13,6 +14,15 @@ const links = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+
+  const isActiveLink = (href: string) => {
+    if (href.startsWith("#")) {
+      return location.pathname === "/" && (location.hash === href || location.hash === "");
+    }
+
+    return location.pathname === href;
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -33,25 +43,23 @@ const Navbar = () => {
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
-          {links.map((l) =>
-            l.href.startsWith("#") ? (
+          {links.map((l) => {
+            const isActive = isActiveLink(l.href);
+            const to = l.href.startsWith("#") ? `/${l.href}` : l.href;
+
+            return (
               <Link
                 key={l.href}
-                to={`/${l.href}`}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                to={to}
+                className={`relative text-sm font-medium transition-colors ${
+                  isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {l.label}
+                {isActive && <span className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-primary" />}
               </Link>
-            ) : (
-              <Link
-                key={l.href}
-                to={l.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {l.label}
-              </Link>
-            ),
-          )}
+            );
+          })}
         </div>
 
         {/* Mobile toggle */}
@@ -74,27 +82,23 @@ const Navbar = () => {
             className="md:hidden bg-background border-b border-border overflow-hidden"
           >
             <div className="container px-6 py-4 flex flex-col gap-4">
-              {links.map((l) =>
-                l.href.startsWith("#") ? (
+              {links.map((l) => {
+                const isActive = isActiveLink(l.href);
+                const to = l.href.startsWith("#") ? `/${l.href}` : l.href;
+
+                return (
                   <Link
                     key={l.href}
-                    to={`/${l.href}`}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                    to={to}
+                    className={`text-sm font-medium transition-colors ${
+                      isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                    }`}
                     onClick={() => setMobileOpen(false)}
                   >
                     {l.label}
                   </Link>
-                ) : (
-                  <Link
-                    key={l.href}
-                    to={l.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {l.label}
-                  </Link>
-                ),
-              )}
+                );
+              })}
             </div>
           </motion.div>
         )}

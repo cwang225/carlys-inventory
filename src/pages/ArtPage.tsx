@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import BackButton from "@/components/BackButton";
 import Navbar from "@/components/Navbar";
 
 const artPhotos = {
@@ -62,12 +62,7 @@ const ArtPage = () => {
       <section id="art" className="scroll-mt-20 py-24 md:py-32">
         <div className="container px-6 max-w-4xl">
           <div className="mb-8">
-            <Link
-              to="/#projects"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              ← Back to selected work
-            </Link>
+            <BackButton />
           </div>
 
           <span className="metric-badge mb-3">Creative Work</span>

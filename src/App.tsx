@@ -8,6 +8,7 @@ import CaseStudyPage from "./pages/CaseStudyPage.tsx";
 import GameDevPage from "./pages/GameDevPage.tsx";
 import ArtPage from "./pages/ArtPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
+import ProjectManagementPage from "./pages/ProjectManagementPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/game-dev" element={<GameDevPage />} />
           <Route path="/art" element={<ArtPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/project-management" element={<ProjectManagementPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
