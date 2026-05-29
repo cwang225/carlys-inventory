@@ -18,7 +18,7 @@ const ProjectGrid = () => {
   const openCaseStudy = () => navigate("/case-study");
 
   return (
-    <section id="projects" className="scroll-mt-20 py-24 md:py-32 bg-surface">
+    <section id="projects" className="scroll-mt-20 py-24 md:py-32">
       <div className="container px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

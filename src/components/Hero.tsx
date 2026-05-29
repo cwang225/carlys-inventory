@@ -1,9 +1,10 @@
+import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
-const Hero = () => {
+const Hero = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute top-20 -left-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
       <div className="absolute bottom-20 -right-32 w-96 h-96 rounded-full bg-glow/10 blur-3xl" />
@@ -40,6 +41,8 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+});
+
+Hero.displayName = "Hero";
 
 export default Hero;
