@@ -101,7 +101,7 @@ const CaseStudy = () => {
           </h3>
           <p className="text-foreground/80 text-lg leading-relaxed mb-8">
             Shifted to an <strong>"Equipment + Calendar"</strong> primary hierarchy, placing the most-used
-            features front and center. The redesign eliminated three layers of unnecessary navigation.
+            features front and center. The redesign restructured navigation to fit a more intuitive flow for users.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="rounded-2xl overflow-hidden border border-border">

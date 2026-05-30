@@ -11,13 +11,13 @@ const ProjectManagementPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <section id="project-management" className="scroll-mt-20 py-24 md:py-32">
+      <section id="product-management" className="scroll-mt-20 py-24 md:py-32">
         <div className="container px-6 max-w-4xl">
           <div className="mb-8">
             <BackButton />
           </div>
 
-          <span className="metric-badge mb-3">Project Management</span>
+          <span className="metric-badge mb-3">Products</span>
           <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">
             JHU Creative Media Center
           </h1>
@@ -30,7 +30,7 @@ const ProjectManagementPage = () => {
             <ProjectCard
               title="JHU Creative Media Center"
               subtitle="Full redesign of the university's creative media platform"
-              metric="📈 80% Usage Increase"
+              metric="80% Usage Increase"
               image={cmcAfter}
               tags={["UX Research", "UI Design", "HTML/JS"]}
               onClick={openCaseStudy}

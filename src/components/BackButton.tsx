@@ -9,10 +9,10 @@ type BackButtonProps = {
 };
 
 const BackButton = ({ className = defaultClassName, label = "← Back" }: BackButtonProps) => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
   return (
-    <button type="button" className={className} onClick={() => navigate(-1)}>
+    <button type="button" className={className} onClick={() => navigate("/home")}>
       {label}
     </button>
   );
