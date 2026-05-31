@@ -37,7 +37,7 @@ const Navbar = () => {
       }`}
     >
       <nav className="container px-6 flex items-center justify-between h-16">
-        <Link to="/" className="font-display font-bold text-lg">
+        <Link to="/home" className="font-display font-bold text-lg">
           Carly<span className="text-primary">.</span>
         </Link>
 
