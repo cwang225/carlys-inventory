@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Space Grotesk", "sans-serif"],
-        body: ["DM Sans", "sans-serif"],
+        display: ["Andika", "sans-serif"],
+        body: ["Andika", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
