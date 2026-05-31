@@ -11,21 +11,29 @@ const ProjectManagementPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <section id="product-management" className="scroll-mt-20 py-24 md:py-32">
-        <div className="container px-6 max-w-4xl">
-          <div className="mb-8">
-            <BackButton />
+      <section id="product-management" className="scroll-mt-20 pb-24 md:pb-32">
+        <div className="relative w-full overflow-hidden">
+          <img
+            src={cmcAfter}
+            alt=""
+            aria-hidden
+            className="absolute inset-0 h-full w-full object-cover blur-xl scale-105"
+          />
+          <div className="absolute inset-0 bg-background/65" aria-hidden />
+          <div className="relative z-10 container px-6 max-w-4xl mx-auto pt-20 pb-12 md:pb-16">
+            <BackButton className="mb-8 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" />
+            <div className="text-center">
+              <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">
+                Product Management
+              </h1>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Projects with my start to end ownership and result metrics
+              </p>
+            </div>
           </div>
+        </div>
 
-          <span className="metric-badge mb-3">Products</span>
-          <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">
-            JHU Creative Media Center
-          </h1>
-          <p className="text-muted-foreground text-lg mb-8">
-            Full redesign of the university&apos;s creative media platform with research-driven
-            planning and measurable outcomes.
-          </p>
-
+        <div className="container px-6 max-w-4xl pt-16">
           <div className="max-w-md">
             <ProjectCard
               title="JHU Creative Media Center"

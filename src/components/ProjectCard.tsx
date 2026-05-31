@@ -31,10 +31,7 @@ const ProjectCard = ({ title, subtitle, metric, image, tags, onClick }: ProjectC
         />
       </div>
       <div className="p-6">
-        {metric && (
-          <span className="metric-badge mb-3">{metric}</span>
-        )}
-        <h3 className="font-display text-xl font-semibold mb-1">{title}</h3>
+        <h3 className="font-display text-xl font-semibold mb-1">{title} - {metric}</h3>
         <p className="text-muted-foreground font-body text-sm mb-4">{subtitle}</p>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (

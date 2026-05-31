@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import BackButton from "@/components/BackButton";
 import cmcBefore from "@/assets/cmc-before.jpg";
 import cmcAfter from "@/assets/CMCAfter.png";
 
@@ -13,26 +14,37 @@ const fadeUp = {
 
 const CaseStudy = () => {
   return (
-    <section id="case-study" className="py-24 md:py-32">
-      <div className="container px-6 max-w-4xl">
-        {/* Hook */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          custom={0}
-          variants={fadeUp}
-          className="mb-16 text-center"
-        >
-          <span className="metric-badge text-base mb-4">📈 80% Usage Increase</span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-            Redesigning the JHU Creative Media Center
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            An 80% increase in user engagement through research-driven design and technical resourcefulness.
-          </p>
-        </motion.div>
+    <section id="case-study" className="pb-24 md:pb-32">
+      {/* Hook */}
+      <div className="relative w-full overflow-hidden">
+        <img
+          src={cmcAfter}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover blur-xl scale-105"
+        />
+        <div className="absolute inset-0 bg-background/65" aria-hidden />
+        <div className="relative z-10 container px-6 max-w-4xl mx-auto pt-20 pb-12 md:pb-16">
+          <BackButton className="mb-8 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            custom={0}
+            variants={fadeUp}
+            className="text-center"
+          >
+            <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
+              Redesigning the JHU Creative Media Center
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              An 80% increase in user engagement through research-driven design and technical resourcefulness.
+            </p>
+          </motion.div>
+        </div>
+      </div>
 
+      <div className="container px-6 max-w-4xl pt-16">
         {/* Problem */}
         <motion.div
           initial="hidden"

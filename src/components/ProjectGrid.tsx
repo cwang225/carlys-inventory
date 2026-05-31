@@ -7,7 +7,7 @@ const projects = [
   {
     title: "JHU Creative Media Center",
     subtitle: "Full redesign of the university's creative media platform",
-    metric: "📈 80% Usage Increase",
+    metric: "80% Usage Increase",
     image: cmcAfter,
     tags: ["UX Research", "UI Design", "HTML/JS"],
   },

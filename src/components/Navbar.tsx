@@ -52,7 +52,7 @@ const Navbar = () => {
                 key={l.href}
                 to={to}
                 className={`relative text-sm font-medium transition-colors ${
-                  isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
                 }`}
               >
                 {l.label}
@@ -91,7 +91,7 @@ const Navbar = () => {
                     key={l.href}
                     to={to}
                     className={`text-sm font-medium transition-colors ${
-                      isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                      isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
                     }`}
                     onClick={() => setMobileOpen(false)}
                   >
