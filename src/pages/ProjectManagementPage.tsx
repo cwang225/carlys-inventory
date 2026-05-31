@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import BackButton from "@/components/BackButton";
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
-import cmcAfter from "@/assets/cmc-after.jpg";
+import cmcAfter from "@/assets/CMCAfter.png";
 
 const ProjectManagementPage = () => {
   const navigate = useNavigate();

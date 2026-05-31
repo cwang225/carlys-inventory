@@ -2,24 +2,27 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import BackButton from "@/components/BackButton";
 import Navbar from "@/components/Navbar";
+import miyabi1 from "@/assets/miyabi1.png";
+import miyabi2 from "@/assets/miyabi2.png";
+import miyabi3 from "@/assets/miyabi3.png";
 
 const artPhotos = {
   cosplay: [
-    { src: "/placeholder.svg", alt: "Cosplay preview 1" },
-    { src: "/placeholder.svg", alt: "Cosplay preview 2" },
-    { src: "/placeholder.svg", alt: "Cosplay preview 3" },
+    { src: "miyabi1.png", alt: "Cosplay preview 1" },
+    { src: "miyab2.png", alt: "Cosplay preview 2" },
+    { src: "miyabi3.png", alt: "Cosplay preview 3" },
   ],
   "digital-art": [
-    { src: "/placeholder.svg", alt: "Digital art preview 1" },
-    { src: "/placeholder.svg", alt: "Digital art preview 2" },
-    { src: "/placeholder.svg", alt: "Digital art preview 3" },
+    { src: "miyabi1.png", alt: "Digital art preview 1" },
+    { src: "miyabi2.png", alt: "Digital art preview 2" },
+    { src: "miyabi3.png", alt: "Digital art preview 3" },
   ],
 } as const;
 
 const artContent = {
   cosplay: {
     detail:
-      "This area is reserved for build logs, material notes, and progress shots for each costume project.",
+      "Miyabi Hoshimi from Zenless Zone Zero",
   },
   "digital-art": {
     detail:
@@ -68,7 +71,7 @@ const ArtPage = () => {
           <span className="metric-badge mb-3">Creative Work</span>
           <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">Art</h1>
           <p className="text-muted-foreground text-lg mb-10">
-            Visual storytelling through handcrafted costumes and digital illustrations.
+            Creative endeavors showcasing quick ability to learn a variety of hands-on skills.
           </p>
 
           <div className="mb-6 flex flex-wrap gap-3">

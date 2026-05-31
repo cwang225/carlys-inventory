@@ -10,16 +10,14 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
       className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${duckies})` }}
     >
-      <motion.img
+      {/* <motion.img
         src={duckies}
         alt=""
         aria-hidden
         className="absolute right-6 md:right-12 top-1/2 z-50 size-[300px] -translate-y-1/2 object-contain pointer-events-auto cursor-pointer select-none"
         whileHover={{ rotate: 360 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-      />
-      {/* <div className="absolute top-20 -left-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
-      <div className="absolute bottom-20 -right-32 w-96 h-96 rounded-full bg-glow/10 blur-3xl" /> */}
+      /> */}
       <div className="container relative z-10 px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

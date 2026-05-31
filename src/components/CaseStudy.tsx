@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import cmcBefore from "@/assets/cmc-before.jpg";
-import cmcAfter from "@/assets/cmc-after.jpg";
+import cmcAfter from "@/assets/CMCAfter.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
-import cmcAfter from "@/assets/cmc-after.jpg";
+import cmcAfter from "@/assets/CMCAfter.png";
 
 const projects = [
   {
@@ -28,7 +28,7 @@ const ProjectGrid = () => {
           className="mb-12"
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold">
-            Selected Work
+            Some Highlights
           </h2>
           <p className="text-muted-foreground mt-2 text-lg">
             Research-driven design with measurable impact.
