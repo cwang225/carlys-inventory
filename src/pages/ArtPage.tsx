@@ -4,7 +4,7 @@ import BackButton from "@/components/BackButton";
 import Navbar from "@/components/Navbar";
 import duckies from "@/assets/duckies.png";
 
-type ArtTab = "cosplay" | "digital-art";
+type ArtTab = "cosplay" | "digital-art" | "fiber-art";
 
 type ArtPhoto = {
   src: string;
@@ -16,34 +16,62 @@ type ArtItem = {
   detail: string;
 };
 
+
 const artItems: Record<ArtTab, ArtItem[]> = {
   cosplay: [
     {
       photos: [
-        { src: "miyabi1.png", alt: "Cosplay preview 1" },
-        { src: "miyabi2.png", alt: "Cosplay preview 2" },
-        { src: "miyabi3.png", alt: "Cosplay preview 3" },
+        { src: "miyabi1.png", alt: "miyabi preview 1" },
+        { src: "miyabi2.png", alt: "miyabi preview 2" },
+        { src: "miyabi3.png", alt: "miyabi preview 3" },
       ],
       detail: "Miyabi Hoshimi from Zenless Zone Zero",
     },
     {
       photos: [
-        { src: "fern1.JPG", alt: "Cosplay preview 2" },
-        { src: "fern2.png", alt: "Cosplay preview 2" },
-        { src: "fern3.png", alt: "Cosplay preview 2" },
+        { src: "fern1.JPG", alt: "fern preview 1" },
+        { src: "fern2.png", alt: "fern preview 2" },
+        { src: "fern3.png", alt: "fern preview 3" },
       ],
       detail: "Fern from Frieren: Beyond Journey's End",
     },
     {
       photos: [
-        { src: "agalea1.png", alt: "Cosplay preview 2" },
-        { src: "agalea2.png", alt: "Cosplay preview 2" },
-        { src: "agalea3.png", alt: "Cosplay preview 2" },
+        { src: "agalea1.png", alt: "agalea preview 1" },
+        { src: "agalea2.png", alt: "agalea preview 2" },
+        { src: "agalea3.png", alt: "agalea preview 3" },
       ],
       detail: "Agalea from Honkai: Starrail",
     },
   ],
   "digital-art": [
+    {
+      photos: [{ src: "venti.PNG", alt: "venti art preview" }],
+      detail:
+        "Barbatos (Venti) from Genshin Impact",
+    },
+    {
+      photos: [{ src: "9S.PNG", alt: "9S art preview" }],
+      detail: "9S from NieR:Automata",
+    },
+    {
+      photos: [{ src: "vazl2.jpg", alt: "zhongli art preview 3" }],
+      detail: "Morax (Zhongli) from Genshin Impact",
+    },
+    {
+      photos: [{ src: "jin.PNG", alt: "jin art preview" }],
+      detail: "Singer Kim Seokjin (Jin) from kpop group BTS",
+    },
+    {
+      photos: [{ src: "ayaya.PNG", alt: "Ayaka art preview" }],
+      detail: "Kamisato Ayaka from Genshin Impact",
+    },
+        {
+      photos: [{ src: "wrio.jpg", alt: "Wriothesley art preview" }],
+      detail: "Wriothesley from Genshin Impact",
+    },
+  ],
+    "fiber-art": [
     {
       photos: [{ src: "miyabi1.png", alt: "Digital art preview 1" }],
       detail:
@@ -62,7 +90,8 @@ const artItems: Record<ArtTab, ArtItem[]> = {
 
 const initialSlides: Record<ArtTab, number[]> = {
   cosplay: [0, 0, 0],
-  "digital-art": [0, 0, 0],
+  "digital-art": [0, 0, 0, 0, 0, 0],
+  "fiber-art": [0, 0, 0],
 };
 
 const ArtPage = () => {
@@ -115,7 +144,10 @@ const ArtPage = () => {
               <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">Art</h1>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                 Creative endeavors showcasing quick ability to learn a variety of hands-on skills.
-              </p>
+              </p >
+              <p className="text-muted-foreground text-md max-w-2xl mx-auto">
+                All art is <u><b>original</b></u>; any discrepancies in styles are due to 4+ years of learning and practice.
+                </p>
             </div>
           </div>
         </div>
@@ -152,6 +184,19 @@ const ArtPage = () => {
               }`}
             >
               Digital Art
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === "fiber-art"}
+              onClick={() => setActiveTab("fiber-art")}
+              className={`px-5 py-2.5 text-sm font-medium transition-colors ${
+                activeTab === "fiber-art"
+                  ? "bg-primary text-white"
+                  : "bg-background text-muted-foreground hover:bg-muted hover:text-foreground"
+              }`}
+            >
+              Fiber Arts
             </button>
             </div>
           </div>
@@ -226,7 +271,7 @@ const ArtPage = () => {
         </div>
       </section>
       <footer className="py-8 text-center text-sm text-muted-foreground font-body border-t border-border">
-        © {new Date().getFullYear()} Carly Wang. Built with care.
+        © {new Date().getFullYear()} Carly Wang. Built with all the whimsy in my heart :3
       </footer>
     </div>
   );
