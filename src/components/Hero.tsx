@@ -7,7 +7,7 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
   return (
     <section
       ref={ref}
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black bg-cover bg-center bg-no-repeat"
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white bg-contain bg-bottom bg-no-repeat"
       style={{ backgroundImage: `url(${webBG})` }}
     >
       {/* <motion.img
@@ -29,7 +29,7 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
             Hi, I'm{" "}
             <span className="gradient-text">Carly!</span>
           </h1>
-          <p className="font-body text-xl md:text-2xl text-white/70 max-w-xl mb-10">
+          <p className="font-body text-xl md:text-2xl text-muted-foreground max-w-xl mb-10">
             HCI Researcher & Product Designer
           </p>
         </motion.div>
@@ -44,7 +44,7 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >
-            <ArrowDown className="w-5 h-5 text-white/60" />
+            <ArrowDown className="w-5 h-5 text-muted-foreground" />
           </motion.div>
         </motion.div>
       </div>

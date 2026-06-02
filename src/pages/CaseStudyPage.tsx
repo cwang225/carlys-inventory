@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
 import CaseStudy from "@/components/CaseStudy";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const CaseStudyPage = () => {
   useEffect(() => {
@@ -11,9 +12,7 @@ const CaseStudyPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <CaseStudy />
-      <footer className="py-8 text-center text-sm text-muted-foreground font-body border-t border-border">
-        © {new Date().getFullYear()} Carly Wang. Built with all the whimsy in my heart :3
-      </footer>
+      <Footer />
     </div>
   );
 };
