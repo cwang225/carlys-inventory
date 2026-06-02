@@ -38,7 +38,7 @@ const ProjectManagementPage = () => {
           <div className="max-w-md">
             <ProjectCard
               title="JHU Creative Media Center"
-              subtitle="Full redesign of the university's the Johns Hopkins University Creative Media Center website"
+              subtitle="Full redesign of the Johns Hopkins University Creative Media Center website"
               metric="80% Usage Increase"
               image={cmcAfter}
               tags={["UX Research", "UI Design", "HTML/JS"]}
