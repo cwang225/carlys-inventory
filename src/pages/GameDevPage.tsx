@@ -1,7 +1,7 @@
 import BackButton from "@/components/BackButton";
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
-import duckies from "@/assets/duckies.png";
+import webBG from "@/assets/webBG.png";
 
 const GameDevPage = () => {
   return (
@@ -10,7 +10,7 @@ const GameDevPage = () => {
       <section id="game-dev" className="scroll-mt-20 pb-24 md:pb-32">
         <div className="relative w-full overflow-hidden">
           <img
-            src={duckies}
+            src={webBG}
             alt=""
             aria-hidden
             className="absolute inset-0 h-full w-full object-cover blur-xl scale-105"
@@ -21,7 +21,7 @@ const GameDevPage = () => {
             <div className="text-center">
               <h1 className="font-display text-3xl md:text-5xl font-bold mb-3">Game Dev</h1>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Unity/C# experiments and game dev prototypes - coming soon.
+                Unity/C# experiments and game dev prototypes.
               </p>
             </div>
           </div>

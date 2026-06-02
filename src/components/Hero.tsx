@@ -1,14 +1,14 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import duckies from "@/assets/duckies.png";
+import webBG from "@/assets/webBG.png";
 
 const Hero = forwardRef<HTMLElement>((_, ref) => {
   return (
     <section
       ref={ref}
       className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${duckies})` }}
+      style={{ backgroundImage: `url(${webBG})` }}
     >
       {/* <motion.img
         src={duckies}
@@ -25,7 +25,7 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-left"
         >
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-white">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-black">
             Hi, I'm{" "}
             <span className="gradient-text">Carly!</span>
           </h1>
