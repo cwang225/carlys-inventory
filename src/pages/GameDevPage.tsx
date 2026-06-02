@@ -3,6 +3,28 @@ import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 import webBG from "@/assets/webBG.png";
 
+// TODO: Replace with your real itch.io game URLs
+const gameDevProjects = [
+  {
+    title: "Ducks Afar",
+    subtitle:
+      "A dreamy story-central puzzle game where players go on a journey of self-discovery and .",
+    metric: "In Development",
+    image: "DABG.png",
+    tags: ["Unity", "C#", "Game Dev", "UI Designer & Coder", "Technical Artist"],
+    itchUrl: "https://l1ryx.itch.io/ducks-afar",
+  },
+  {
+    title: "ADSOMNIA!",
+    subtitle:
+      "A fast-paced strategy game where players are exploited by the parasitic ad algorithms of today",
+    metric: "Ctrl+Alt+DMV Game Jam 2026",
+    image: "ADSOMNIA!.png",
+    tags: ["Unity", "C#", "Game Dev", "Lead Artist"],
+    itchUrl: "https://yeetimameme.itch.io/adsomnia",
+  },
+] as const;
+
 const GameDevPage = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -29,20 +51,17 @@ const GameDevPage = () => {
 
         <div className="container px-6 max-w-4xl pt-16">
           <div className="grid grid-cols-1 items-start gap-12 sm:grid-cols-2">
-            <ProjectCard
-              title="Ducks Afar"
-              subtitle="A dreamy story-central puzzle game where players go on a journey of self-discovery and ."
-              metric="In Development"
-              image="DABG.png"
-              tags={["Unity", "C#", "Game Dev", "UI Designer & Coder", "Technical Artist"]}
-            />
-            <ProjectCard
-              title="ADSOMNIA!"
-              subtitle="A fast-paced strategy game where players are exploited by the parasitic ad algorithms of today"
-              metric="Ctrl+Alt+DMV Game Jam 2026"
-              image="ADSOMNIA!.png"
-              tags={["Unity", "C#", "Game Dev", "Lead Artist"]}
-            />
+            {gameDevProjects.map((project) => (
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                subtitle={project.subtitle}
+                metric={project.metric}
+                image={project.image}
+                tags={[...project.tags]}
+                href={project.itchUrl}
+              />
+            ))}
           </div>
         </div>
       </section>

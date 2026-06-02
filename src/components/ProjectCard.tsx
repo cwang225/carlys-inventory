@@ -6,9 +6,20 @@ interface ProjectCardProps {
   metric?: string;
   image: string;
   tags: string[];
+  href?: string;
   onClick?: () => void;
   imageClassName?: string;
 }
+
+const cardClassName = (isInteractive: boolean) =>
+  `group glass-card flex h-full w-full min-w-0 flex-col overflow-hidden p-0 text-left no-underline ${
+    isInteractive ? "cursor-pointer" : "cursor-default disabled:opacity-100"
+  }`;
+
+const cardMotionProps = {
+  whileHover: { y: -6, scale: 1.01 },
+  transition: { type: "spring", stiffness: 300, damping: 20 },
+} as const;
 
 const ProjectCard = ({
   title,
@@ -16,22 +27,14 @@ const ProjectCard = ({
   metric,
   image,
   tags,
+  href,
   onClick,
   imageClassName,
 }: ProjectCardProps) => {
-  const isInteractive = typeof onClick === "function";
+  const isInteractive = Boolean(href) || typeof onClick === "function";
 
-  return (
-    <motion.button
-      type="button"
-      whileHover={{ y: -6, scale: 1.01 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className={`group glass-card flex h-full w-full min-w-0 flex-col overflow-hidden p-0 text-left ${
-        isInteractive ? "cursor-pointer" : "cursor-default disabled:opacity-100"
-      }`}
-      onClick={onClick}
-      disabled={!isInteractive}
-    >
+  const content = (
+    <>
       <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-black">
         <img
           src={image}
@@ -53,6 +56,33 @@ const ProjectCard = ({
           ))}
         </div>
       </div>
+    </>
+  );
+
+  if (href) {
+    return (
+      <motion.a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${title} on itch.io (opens in new tab)`}
+        className={cardClassName(isInteractive)}
+        {...cardMotionProps}
+      >
+        {content}
+      </motion.a>
+    );
+  }
+
+  return (
+    <motion.button
+      type="button"
+      className={cardClassName(isInteractive)}
+      onClick={onClick}
+      disabled={!isInteractive}
+      {...cardMotionProps}
+    >
+      {content}
     </motion.button>
   );
 };
