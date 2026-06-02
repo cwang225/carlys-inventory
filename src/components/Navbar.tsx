@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Home", href: "/home" },
+  { label: "Home", href: "/" },
   { label: "Products", href: "/product-management" },
   { label: "Game Dev", href: "/game-dev" },
   { label: "Art", href: "/art" },
@@ -37,7 +37,7 @@ const Navbar = () => {
       }`}
     >
       <nav className="container px-6 flex items-center justify-between h-16">
-        <Link to="/home" className="font-display font-bold text-lg">
+        <Link to="/" className="font-display font-bold text-lg">
           Carly<span className="text-primary">.</span>
         </Link>
 

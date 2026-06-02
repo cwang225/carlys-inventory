@@ -12,7 +12,7 @@ const BackButton = ({ className = defaultClassName, label = "← Back" }: BackBu
     const navigate = useNavigate();
 
   return (
-    <button type="button" className={className} onClick={() => navigate("/home")}>
+    <button type="button" className={className} onClick={() => navigate("/")}>
       {label}
     </button>
   );
