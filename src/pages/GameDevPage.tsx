@@ -8,7 +8,7 @@ const gameDevProjects = [
   {
     title: "Ducks Afar",
     subtitle:
-      "A dreamy story-central puzzle game where players go on a journey of self-discovery and .",
+      "A dreamy story-central puzzle game where players go on a journey of self-discovery and love.",
     metric: "In Development",
     image: "DABG.png",
     tags: ["Unity", "C#", "Game Dev", "UI Designer & Coder", "Technical Artist"],
