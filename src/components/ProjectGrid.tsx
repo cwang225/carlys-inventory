@@ -6,7 +6,7 @@ import cmcAfter from "@/assets/CMCAfter.png";
 const projects = [
   {
     title: "JHU Creative Media Center",
-    subtitle: "Full redesign of the university's creative media platform",
+    subtitle: "Full redesign of the Johns Hopkins University Creative Media Center website",
     metric: "80% Usage Increase",
     image: cmcAfter,
     tags: ["UX Research", "UI Design", "HTML/JS"],
