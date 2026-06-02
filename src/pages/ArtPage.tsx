@@ -4,7 +4,7 @@ import BackButton from "@/components/BackButton";
 import Navbar from "@/components/Navbar";
 import duckies from "@/assets/duckies.png";
 
-type ArtTab = "cosplay" | "digital-art" | "fiber-art";
+type ArtTab = "cosplay" | "digital-art" | "misc";
 
 type ArtPhoto = {
   src: string;
@@ -63,27 +63,56 @@ const artItems: Record<ArtTab, ArtItem[]> = {
       detail: "Singer Kim Seokjin (Jin) from kpop group BTS",
     },
     {
-      photos: [{ src: "ayaya.PNG", alt: "Ayaka art preview" }],
+      photos: [
+        { src: "ayaya.PNG", alt: "Ayaka art preview" }
+      ],
       detail: "Kamisato Ayaka from Genshin Impact",
     },
-        {
+    {
       photos: [{ src: "wrio.jpg", alt: "Wriothesley art preview" }],
       detail: "Wriothesley from Genshin Impact",
     },
   ],
-    "fiber-art": [
-    {
-      photos: [{ src: "miyabi1.png", alt: "Digital art preview 1" }],
-      detail:
-        "This section will highlight finished pieces, style studies, and process snapshots from draft to final render.",
+  "misc": [
+      {
+        photos: [
+        { src: "lucky.PNG", alt: "lucky art preview" },
+        { src: "miso.PNG", alt: "miso art preview" },
+        { src: "luci.PNG", alt: "luci art preview" },
+        { src: "gandalf.PNG", alt: "gandalf art preview" },
+        { src: "galadriel.PNG", alt: "galadriel art preview" },
+        { src: "annaKitty.PNG", alt: "annaKitty art preview" },
+        { src: "addyKitty1.PNG", alt: "addyKitty1 art preview" },
+        { src: "addyKitty2.PNG", alt: "addyKitty2 art preview" },
+        { src: "addyKitty3.PNG", alt: "addyKitty3 art preview" },
+        { src: "sunny.PNG", alt: "sunny art preview" },
+        { src: "4th.PNG", alt: "4th cat art preview" },
+      ],
+      detail: "Cat Sticker Commissions -- All proceeds donated towards Breast Cancer Awareness",
     },
     {
-      photos: [{ src: "miyabi2.png", alt: "Digital art preview 2" }],
-      detail: "Add description for digital art piece 2.",
+      photos: [
+        { src: "snowmanQuack.png", alt: "snowmanQuack art preview" },
+        { src: "iceQuack.png", alt: "iceQuack art preview" },
+        { src: "movieQuack.png", alt: "movieQuack art preview" },
+        { src: "loveQuack.png", alt: "loveQuack art preview" },
+        { src: "cutieQuack.png", alt: "cutieQuack art preview" },
+        { src: "singQuack.png", alt: "singQuack art preview" },
+        { src: "eatQuack.png", alt: "eatQuack art preview" },
+        { src: "blushieQuackHoldSparkler.png", alt: "blushieQuackHoldSparkler art preview"},
+      ],
+      detail: "Quack -- Mascot of the Johns Hopkins Creative Media Center: Stickers used for event promotion and merchandise",
     },
     {
-      photos: [{ src: "miyabi3.png", alt: "Digital art preview 3" }],
-      detail: "Add description for digital art piece 3.",
+      photos: [
+        { src: "sewingQuack.png", alt: "sewingQuack art preview" },
+        { src: "headphonesQuack5.png", alt: "headphonesQuack art preview" },
+        { src: "gameQuack3.png", alt: "gameQuack art preview" },
+        { src: "printerQuack2.png", alt: "printerQuack art preview" },
+        { src: "angryQuack.png", alt: "angryQuack art preview" },
+        { src: "3DprinterQuack2.png", alt: "3DprinterQuack art preview" },
+      ],
+      detail: "3D Models of Quack used for the Johns Hopkins Creative Media Center 2025 - 2026 website: made with Blender",
     },
   ],
 };
@@ -91,7 +120,7 @@ const artItems: Record<ArtTab, ArtItem[]> = {
 const initialSlides: Record<ArtTab, number[]> = {
   cosplay: [0, 0, 0],
   "digital-art": [0, 0, 0, 0, 0, 0],
-  "fiber-art": [0, 0, 0],
+  "misc": [0, 0, 0],
 };
 
 const ArtPage = () => {
@@ -188,15 +217,15 @@ const ArtPage = () => {
             <button
               type="button"
               role="tab"
-              aria-selected={activeTab === "fiber-art"}
-              onClick={() => setActiveTab("fiber-art")}
+              aria-selected={activeTab === "misc"}
+              onClick={() => setActiveTab("misc")}
               className={`px-5 py-2.5 text-sm font-medium transition-colors ${
-                activeTab === "fiber-art"
+                activeTab === "misc"
                   ? "bg-primary text-white"
                   : "bg-background text-muted-foreground hover:bg-muted hover:text-foreground"
               }`}
             >
-              Fiber Arts
+              Misc.
             </button>
             </div>
           </div>
@@ -205,7 +234,7 @@ const ArtPage = () => {
             {items.map((item, itemIndex) => {
               const activeIndex = currentSlides[activeTab][itemIndex];
               const photo = item.photos[activeIndex];
-              const showCarousel = isCosplay && item.photos.length > 1;
+              const showCarousel = item.photos.length > 1;
 
               return (
                 <div
@@ -243,7 +272,7 @@ const ArtPage = () => {
                       </div>
                       {showCarousel && (
                         <div className="flex items-center justify-center gap-2 mt-2">
-                          {item.photos.map((itemPhoto, slideIndex) => (
+                          {/* {item.photos.map((itemPhoto, slideIndex) => (
                             <button
                               key={itemPhoto.alt}
                               type="button"
@@ -255,7 +284,8 @@ const ArtPage = () => {
                               }`}
                               aria-label={`Go to slide ${slideIndex + 1}`}
                             />
-                          ))}
+                          ))} */}
+                          {activeIndex + 1} / {item.photos.length}
                         </div>
                       )}
                     </div>

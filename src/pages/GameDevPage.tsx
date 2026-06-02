@@ -1,5 +1,6 @@
 import BackButton from "@/components/BackButton";
 import Navbar from "@/components/Navbar";
+import ProjectCard from "@/components/ProjectCard";
 import duckies from "@/assets/duckies.png";
 
 const GameDevPage = () => {
@@ -27,23 +28,21 @@ const GameDevPage = () => {
         </div>
 
         <div className="container px-6 max-w-4xl pt-16">
-          <div className="rounded-2xl overflow-hidden border border-border bg-surface">
-            <img
-              src="/placeholder.svg"
-              alt="Playground"
-              className="w-full h-auto object-cover"
+          <div className="grid grid-cols-1 items-start gap-12 sm:grid-cols-2">
+            <ProjectCard
+              title="Ducks Afar"
+              subtitle="A dreamy story-central puzzle game where players go on a journey of self-discovery and ."
+              metric="In Development"
+              image="DABG.png"
+              tags={["Unity", "C#", "Game Dev", "UI Designer & Coder", "Technical Artist"]}
             />
-          </div>
-
-          <div className="flex flex-wrap gap-2 mt-6">
-            {["Unity", "C#", "Game Dev"].map((tag) => (
-              <span
-                key={tag}
-                className="text-xs font-medium px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground"
-              >
-                {tag}
-              </span>
-            ))}
+            <ProjectCard
+              title="ADSOMNIA!"
+              subtitle="A fast-paced strategy game where players are exploited by the parasitic ad algorithms of today"
+              metric="Ctrl+Alt+DMV Game Jam 2026"
+              image="ADSOMNIA!.png"
+              tags={["Unity", "C#", "Game Dev", "Lead Artist"]}
+            />
           </div>
         </div>
       </section>
