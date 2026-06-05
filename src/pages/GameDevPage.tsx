@@ -10,7 +10,7 @@ const gameDevProjects = [
     title: "Ducks Afar",
     subtitle:
       "A dreamy story-central puzzle game where players go on a journey of self-discovery and love.",
-    metric: "In Development",
+    metric: "In Development: V0.26.6.8",
     image: "DABG.png",
     tags: ["Unity", "C#", "Game Dev", "UI Designer & Coder", "Technical Artist"],
     itchUrl: "https://l1ryx.itch.io/ducks-afar",
