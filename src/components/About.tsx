@@ -24,7 +24,7 @@ const About = () => {
 
             <div>
               <h3 className="font-display text-2xl md:text-3xl font-semibold mb-3">Carly Wang</h3>
-              <p className="text-muted-foreground mb-4">Dedicated human experience and project management designer</p>
+              <p className="text-muted-foreground mb-4">Dedicated human experience and project management designer with a passion for creating intuitive and engaging digital experiences.</p>
               <div className="mb-6">
                 <h4 className="font-semibold mb-2">Qualifications</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
