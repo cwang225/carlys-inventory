@@ -5,9 +5,8 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "/product-management" },
-  { label: "Game Dev", href: "/game-dev" },
-  { label: "Art", href: "/art" },
+  { label: "Projects", href: "/product-management" },
+  { label: "Hobbies", href: "/game-dev" },
   { label: "About Me", href: "/about" },
 ];
 
@@ -19,6 +18,10 @@ const Navbar = () => {
   const isActiveLink = (href: string) => {
     if (href.startsWith("#")) {
       return location.pathname === "/" && (location.hash === href || location.hash === "");
+    }
+
+    if (href === "/game-dev") {
+      return location.pathname === "/game-dev" || location.pathname === "/art";
     }
 
     return location.pathname === href;
