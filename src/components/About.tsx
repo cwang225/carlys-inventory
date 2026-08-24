@@ -33,7 +33,6 @@ const About = () => {
                   <li>- Experienced in HCI & UX Research, Full Stack Development, and SWE</li>
                 </ul>
               </div>
-
               <div className="flex flex-wrap gap-4">
                 {/* <a
                   href="#"
