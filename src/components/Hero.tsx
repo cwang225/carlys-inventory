@@ -29,8 +29,11 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
             Hi, I'm{" "}
             <span className="gradient-text">Carly!</span>
           </h1>
-          <p className="font-body text-xl md:text-2xl text-muted-foreground max-w-xl mb-10">
-            HCI Researcher & Product Designer
+          <p className="font-body text-xl md:text-2xl text-muted-foreground max-w-xl mb-2">
+            Project Manager · Fullstack Developer · SWE
+          </p>
+          <p className="font-body text-base md:text-lg text-muted-foreground max-w-xl mb-10">
+            Dedicated to building user-centered products that solve real-world problems.
           </p>
         </motion.div>
 
